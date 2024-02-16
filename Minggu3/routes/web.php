@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\VoterController;
+use App\Http\Controllers\TaskController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,4 @@ Route::get('/student_u', [UserController::class, 'viewstudent_u']);
 Route::get('/teacher_u', [UserController::class, 'viewteacher_u']);
 Route::get('/admin_u', [UserController::class, 'viewadmin_u']);
 
+Route::get('/task', [TaskController::class, 'index']);

@@ -7,12 +7,18 @@
     <title>voters</title>
 </head>
 <body>
+    <<h1><center>QUERY</center></h1>
     <table border="1">
-        <tr>
-            <td>Juned</td><td>Sailful</td>
-            <td>Ilfam</td><td>Sentu</td>
-            <td>Yafri</td><td>Iyus</td>
+         @foreach ($voter as $vote)    
+            <tr>
+            {{--@foreach ($voter as $vote)--}}
+            <td>{{$vote->id}}</td>
+           <td>{{$vote->name}}</td>
+           <td>{{$vote->email}}</td>
+           <td>{{$vote->address}}</td>
+           {{--@endforeach--}}
 </tr>
+@endforeach
 </table>
 </body>
 </html>
