@@ -7,7 +7,7 @@ use App\Http\Controllers\Login\RegisterController;
 use App\Http\Controllers\Login\ForgotPasswordController;
 use App\Http\Controllers\Login\LogoutController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +28,8 @@ Route::get('/forgot_password', [ForgotPasswordController::class, 'index']);
 Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth'); //route untuk dashboard diperlukan login terlebih dahulu
 Route::get('/pengaturan_akun', [UserController::class, 'option'])->middleware('auth'); //route untuk option diperlukan login terlebih dahulu
 
+Route::get('/upload', [UploadController::class, 'upload']);
+Route::post('/upload/proses', [UploadController::class, 'proses_upload']);
 
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
